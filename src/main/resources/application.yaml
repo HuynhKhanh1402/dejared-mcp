@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: dejared-mcp
+  main:
+    banner-mode: off
+  ai:
+    mcp:
+      server:
+        stdio: true
+        name: dejared
+
+logging:
+  file:
+    name: dejared.log
+  level:
+    root: WARN
+
+dejared:
+  cache:
+    max-size: 500
