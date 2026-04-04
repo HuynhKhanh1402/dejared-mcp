@@ -112,7 +112,7 @@ public class ToolConfig {
     }
 
     @Tool(name = "dejared_decompile_class",
-          description = "Decompile a .class file to Java source code. Default engine is CFR. If decompilation fails or produces poor results (e.g. obfuscated code), retry with engine=vineflower or engine=procyon for better output.")
+          description = "EXPENSIVE: Decompile a class to full Java source code. Output can be thousands of lines for large classes. ALWAYS call dejared_get_metadata or dejared_dump_package_metadata first to check class size and decide if decompilation is necessary. Default engine: CFR. Alternatives: vineflower, procyon.")
     public String decompileClass(
             @ToolParam(description = "Absolute path to the JAR file") String jarFilePath,
             @ToolParam(description = "Fully qualified class name, e.g. com.example.config.DatabaseConfig") String className,
