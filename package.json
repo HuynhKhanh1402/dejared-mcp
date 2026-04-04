@@ -1,11 +1,11 @@
 {
   "name": "dejared-mcp",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Explore, analyze, and decompile Java JAR files via MCP",
   "bin": {
     "dejared-mcp": "bin/dejared-mcp.js"
   },
-  "jarVersion": "0.1.0",
+  "jarVersion": "0.0.1",
   "license": "MIT",
   "author": "HuynhKhanh1402",
   "repository": {
