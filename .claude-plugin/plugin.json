@@ -7,5 +7,11 @@
   },
   "repository": "https://github.com/HuynhKhanh1402/dejared-mcp",
   "license": "MIT",
-  "keywords": ["java", "jar", "decompiler", "bytecode", "reverse-engineering", "mcp"]
+  "keywords": ["java", "jar", "decompiler", "bytecode", "reverse-engineering", "mcp"],
+  "mcpServers": {
+    "dejared": {
+      "command": "npx",
+      "args": ["-y", "dejared-mcp"]
+    }
+  }
 }
