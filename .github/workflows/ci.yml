@@ -9,6 +9,27 @@ on:
       - master
 
 jobs:
+  check-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify package.json and server.json versions match
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          SERVER_VERSION=$(node -p "require('./server.json').version")
+          SERVER_PKG_VERSION=$(node -p "require('./server.json').packages[0].version")
+          if [ "$PKG_VERSION" != "$SERVER_VERSION" ]; then
+            echo "::error::package.json version ($PKG_VERSION) does not match server.json version ($SERVER_VERSION)"
+            exit 1
+          fi
+          if [ "$PKG_VERSION" != "$SERVER_PKG_VERSION" ]; then
+            echo "::error::package.json version ($PKG_VERSION) does not match server.json packages[0].version ($SERVER_PKG_VERSION)"
+            exit 1
+          fi
+          echo "Versions match: $PKG_VERSION"
+
   test:
     runs-on: ubuntu-latest
     steps:
