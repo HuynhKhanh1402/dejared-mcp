@@ -5,6 +5,15 @@
   "bin": {
     "dejared-mcp": "bin/dejared-mcp.js"
   },
+  "files": [
+    "bin/",
+    "lib/",
+    "skills/",
+    ".claude-plugin/",
+    ".mcp.json",
+    "README.md",
+    "LICENSE"
+  ],
   "jarVersion": "0.0.1",
   "license": "MIT",
   "author": "HuynhKhanh1402",
