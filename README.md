@@ -74,6 +74,20 @@ Or add it to your project's `.mcp.json`:
 </details>
 
 <details>
+<summary><strong>Claude Code Plugin (Marketplace)</strong></summary>
+
+You can also install dejared as a Claude Code plugin, which includes a `/jar-analysis` skill with structured workflows for exploring JARs:
+
+```bash
+claude plugin marketplace add HuynhKhanh1402/dejared-mcp
+claude plugin install dejared@dejared-mcp-marketplace
+```
+
+This installs both the MCP server and the `/jar-analysis` skill.
+
+</details>
+
+<details>
 <summary><strong>Cursor</strong></summary>
 
 Create or edit `.cursor/mcp.json` in your project root (project-level) or `~/.cursor/mcp.json` (global):
