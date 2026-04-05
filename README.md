@@ -70,7 +70,10 @@ If Java is not in your system PATH, set the `DEJARED_JAVA_PATH` environment vari
 ## How It Works
 
 The npm package is a thin Node.js wrapper. On first run it:
-1. Checks `~/.dejared-mcp/` for a cached JAR matching the current version
+1. Checks the platform cache directory for a cached JAR matching the current version
+   - Linux: `$XDG_CACHE_HOME/dejared-mcp` (default `~/.cache/dejared-mcp`)
+   - macOS: `~/Library/Caches/dejared-mcp`
+   - Windows: `%LOCALAPPDATA%\dejared-mcp`
 2. Downloads the JAR from GitHub Releases if not cached
 3. Spawns `java -jar` with stdio inherited for MCP transport
 
