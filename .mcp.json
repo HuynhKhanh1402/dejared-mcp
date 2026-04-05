@@ -3,9 +3,7 @@
     "dejared": {
       "command": "npx",
       "args": ["-y", "dejared-mcp"],
-      "env": {
-        "DEJARED_JAVA_PATH": "/path/to/java"
-      }
+      "env": {}
     }
   }
 }
