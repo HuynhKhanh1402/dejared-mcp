@@ -24,6 +24,16 @@ Most MCP-compatible tools use a JSON configuration like this:
 
 See below for tool-specific instructions.
 
+## MCP Registry
+
+This server is published to the [MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.huynhkhanh1402/dejared`.
+
+You can verify it via the registry API:
+
+```bash
+curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.huynhkhanh1402/dejared"
+```
+
 ## Configuration by Tool
 
 <details>
