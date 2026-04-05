@@ -1,6 +1,7 @@
 {
   "name": "dejared-mcp",
   "version": "0.1.1",
+  "mcpName": "io.github.huynhkhanh1402/dejared",
   "description": "Explore, analyze, and decompile Java JAR files via MCP",
   "bin": {
     "dejared-mcp": "bin/dejared-mcp.js"

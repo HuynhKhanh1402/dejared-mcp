@@ -4,8 +4,8 @@ An MCP (Model Context Protocol) server that lets AI assistants explore, analyze,
 
 ## Prerequisites
 
-- **Node.js 18+** — required for the `npx` wrapper (not needed for pure Java usage)
-- **Java 21+** — JRE is sufficient
+- **Node.js 18+** - required for the `npx` wrapper (not needed for pure Java usage)
+- **Java 21+** - JRE is sufficient
 
 ## Quick Start
 
@@ -130,13 +130,13 @@ Click **+ Add** and configure:
 <details>
 <summary><strong>Gemini CLI</strong></summary>
 
-**Option A** — CLI command:
+**Option A** - CLI command:
 
 ```bash
 gemini mcp add dejared npx -y dejared-mcp
 ```
 
-**Option B** — Edit `~/.gemini/settings.json` (global) or `.gemini/settings.json` (project):
+**Option B** - Edit `~/.gemini/settings.json` (global) or `.gemini/settings.json` (project):
 
 ```json
 {
@@ -176,7 +176,7 @@ Or install through the MCP Store if available.
 <details>
 <summary><strong>GitHub Copilot CLI</strong></summary>
 
-**Option A** — Interactive:
+**Option A** - Interactive:
 
 ```
 /mcp add
@@ -187,7 +187,7 @@ Then fill in:
 - **Server Type**: `STDIO`
 - **Command**: `npx -y dejared-mcp`
 
-**Option B** — Edit `~/.copilot/mcp-config.json`:
+**Option B** - Edit `~/.copilot/mcp-config.json`:
 
 ```json
 {
@@ -258,20 +258,20 @@ If Java is not in your system PATH, set the `DEJARED_JAVA_PATH` environment vari
 
 ## Features
 
-**Discovery** — Browse JAR structure:
-- `dejared_list_packages` — List all packages with class counts
-- `dejared_list_classes` — List classes in a specific package
-- `dejared_list_resources` — List non-class resource files
-- `dejared_read_resource` — Read text resources (yml, xml, properties, json, etc.)
+**Discovery** - Browse JAR structure:
+- `dejared_list_packages` - List all packages with class counts
+- `dejared_list_classes` - List classes in a specific package
+- `dejared_list_resources` - List non-class resource files
+- `dejared_read_resource` - Read text resources (yml, xml, properties, json, etc.)
 
-**Hunting** — Search inside JARs:
-- `dejared_search_class` — Search classes by name
-- `dejared_search_string` — Search string literals in bytecode (URLs, SQL, error messages, etc.)
+**Hunting** - Search inside JARs:
+- `dejared_search_class` - Search classes by name
+- `dejared_search_string` - Search string literals in bytecode (URLs, SQL, error messages, etc.)
 
-**Deep Analysis** — Inspect and decompile:
-- `dejared_get_metadata` — Extract class metadata via ASM (fast, no decompilation)
-- `dejared_dump_package_metadata` — Batch metadata for entire packages
-- `dejared_decompile_class` — Decompile `.class` to Java source code
+**Deep Analysis** - Inspect and decompile:
+- `dejared_get_metadata` - Extract class metadata via ASM (fast, no decompilation)
+- `dejared_dump_package_metadata` - Batch metadata for entire packages
+- `dejared_decompile_class` - Decompile `.class` to Java source code
 
 ## Decompiler Engines
 
