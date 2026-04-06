@@ -6,12 +6,12 @@
     "url": "https://github.com/HuynhKhanh1402/dejared-mcp",
     "source": "github"
   },
-  "version": "0.1.3",
+  "version": "0.1.4",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "dejared-mcp",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "transport": {
         "type": "stdio"
       }
