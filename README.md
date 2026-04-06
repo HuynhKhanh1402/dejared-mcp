@@ -1,7 +1,7 @@
 [![npm version](https://img.shields.io/npm/v/dejared-mcp?style=flat-square)](https://www.npmjs.com/package/dejared-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)]()
-[![Java](https://img.shields.io/badge/Java-21%2B-ED8B00?style=flat-square&logo=openjdk&logoColor=white)]()
+[![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=flat-square&logo=openjdk&logoColor=white)]()
 
 # dejared-mcp
 
@@ -41,7 +41,7 @@ transport.
 ## Prerequisites
 
 - **Node.js** 18 or later
-- **Java** 21 or later (JRE is sufficient)
+- **Java** 17 or later (JRE is sufficient)
 
 ## Quick Start
 
@@ -358,7 +358,7 @@ If you prefer to run the server JAR directly without Node.js:
 
 2. Run it:
    ```bash
-   java -jar dejared-mcp-0.1.3.jar
+   java -jar dejared-mcp-0.2.0.jar
    ```
 
 3. Configure your MCP client to use the JAR directly instead of `npx`:
@@ -368,7 +368,7 @@ If you prefer to run the server JAR directly without Node.js:
      "mcpServers": {
        "dejared": {
          "command": "java",
-         "args": ["-jar", "/path/to/dejared-mcp-0.1.3.jar"]
+         "args": ["-jar", "/path/to/dejared-mcp-0.2.0.jar"]
        }
      }
    }
@@ -437,7 +437,7 @@ tool. The default timeout is 30 seconds and can be adjusted via
 
 **Q: Which Java version do I need?**
 
-Java 21 or later. A JRE is sufficient; you do not need a full JDK.
+Java 17 or later. A JRE is sufficient; you do not need a full JDK.
 
 **Q: Can I run the server without Node.js?**
 
