@@ -8,14 +8,9 @@ spring:
       server:
         stdio: true
         name: dejared
+        instructions: "Tools are grouped by cost: discovery tools (list_packages, list_classes, list_resources, search_class) and analysis tools (get_metadata, dump_package_metadata, search_string) are cheap; decompile_class is expensive. Start with discovery to map the JAR, use metadata tools to inspect structure, and only decompile when method body logic is needed. For bulk inspection, prefer dump_package_metadata over repeated get_metadata calls. If CFR decompilation output has issues, retry with vineflower or procyon."
         annotation-scanner:
-          enabled: false
-
-logging:
-  file:
-    name: dejared.log
-  level:
-    root: WARN
+          enabled: true
 
 dejared:
   cache:
