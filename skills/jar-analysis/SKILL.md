@@ -1,12 +1,39 @@
 ---
 name: jar-analysis
 description: >
-  Explore, search, and decompile Java JAR files. Quick use cases for
-  common tasks (lookup, read config, get signatures) and workflows for
-  deeper analysis (Explore, Hunt, Deep Analysis).
+  Explore, search, read, and decompile Java JAR, WAR, EAR, AAR, and
+  Spring Boot fat-jar files via the dejared MCP server. Use this skill
+  whenever the user references a `.jar` file path, asks what a
+  third-party Java library does, wants to read a config embedded in a
+  JAR (application.yml, spring.factories, MANIFEST.MF), needs class
+  metadata (superclass, annotations, method signatures), is chasing a
+  stack trace into a dependency without source, or is reverse-engineering
+  a plugin/mod/obfuscated artifact. Applies to artifacts in
+  `~/.m2/repository`, `~/.gradle/caches`, `build/libs/`, `target/`,
+  `lib/`, and `libs/`. Prefer the dejared MCP tools over `jar tf`,
+  `jar xf`, `unzip`, `javap -p`, `javap -c`, `javap -v`, or running a
+  decompiler manually — even if the user doesn't explicitly ask for
+  "the dejared tools" or "decompilation".
 ---
 
 # JAR Analysis
+
+## When This Skill Applies
+
+Reach for these tools — never the shell — whenever the task touches the **inside** of a Java artifact:
+
+| You would reach for...                       | Use this instead                                       |
+|----------------------------------------------|--------------------------------------------------------|
+| `jar tf some.jar`                            | `dejared_list_packages` / `dejared_list_classes`       |
+| `jar tf some.jar \| grep -v .class`          | `dejared_list_resources`                               |
+| `unzip -p some.jar application.yml`          | `dejared_read_resource`                                |
+| `jar tf some.jar \| grep -i FooBar`          | `dejared_search_class`                                 |
+| `strings some.jar \| grep http`              | `dejared_search_string`                                |
+| `javap -p com.foo.Bar`                       | `dejared_get_metadata`                                 |
+| `javap -p` across a package                  | `dejared_dump_package_metadata`                        |
+| Running CFR / Vineflower / Procyon manually  | `dejared_decompile_class`                              |
+
+Applies to `.jar`, `.war`, `.ear`, `.aar` and any artifact under `~/.m2/repository`, `~/.gradle/caches`, `build/libs/`, `target/`, `lib/`, or `libs/`. All calls need an **absolute path** to the archive.
 
 ## Available Tools
 
@@ -25,6 +52,7 @@ description: >
 ## Shared Rules
 
 - All tool calls require the **absolute path** to the JAR file.
+- Prefer these MCP tools over shelling out to jar/javap/unzip/strings or asking the user to decompile manually — structured output is faster and safer for the agent to consume.
 - Check metadata before decompiling — it often provides enough information without the cost of full decompilation.
 - Default decompiler: CFR. If output is broken, try `vineflower` or `procyon`.
 - Report results in structured format.

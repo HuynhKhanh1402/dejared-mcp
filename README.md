@@ -174,7 +174,7 @@ Or add it to your project's `.mcp.json` using the standard config above.
 **Plugin (Marketplace)** installs both the MCP server and the `/jar-analysis` skill:
 
 ```bash
-claude plugin marketplace add HuynhKhanh1402/dejared-mcp
+claude plugin marketplace add hqkh4nh/dejared-mcp
 claude plugin install dejared@dejared-mcp-marketplace
 ```
 
@@ -354,7 +354,7 @@ Open Windsurf settings, navigate to MCP servers, and add a new server using the 
 
 If you prefer to run the server JAR directly without Node.js:
 
-1. Download the latest JAR from [GitHub Releases](https://github.com/HuynhKhanh1402/dejared-mcp/releases).
+1. Download the latest JAR from [GitHub Releases](https://github.com/hqkh4nh/dejared-mcp/releases).
 
 2. Run it:
    ```bash
@@ -477,7 +477,7 @@ cd java-mcp
 
 ### Reporting Issues
 
-Open an issue on [GitHub Issues](https://github.com/HuynhKhanh1402/dejared-mcp/issues)
+Open an issue on [GitHub Issues](https://github.com/hqkh4nh/dejared-mcp/issues)
 with steps to reproduce the problem, your Java version, and your
 Node.js version.
 

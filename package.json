@@ -1,7 +1,7 @@
 {
   "name": "dejared-mcp",
-  "version": "1.0.0",
-  "mcpName": "io.github.HuynhKhanh1402/dejared",
+  "version": "1.0.1",
+  "mcpName": "io.github.hqkh4nh/dejared",
   "description": "Explore, analyze, and decompile Java JAR files via MCP",
   "bin": {
     "dejared-mcp": "bin/dejared-mcp.js"
@@ -16,10 +16,10 @@
     "LICENSE"
   ],
   "license": "MIT",
-  "author": "HuynhKhanh1402",
+  "author": "hqkh4nh",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HuynhKhanh1402/dejared-mcp"
+    "url": "https://github.com/hqkh4nh/dejared-mcp"
   },
   "keywords": [
     "mcp",

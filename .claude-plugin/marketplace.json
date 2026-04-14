@@ -1,8 +1,8 @@
 {
   "name": "dejared-mcp-marketplace",
   "owner": {
-    "name": "HuynhKhanh1402",
-    "email": "huynhkhanh14022004@gmail.com"
+    "name": "hqkh4nh",
+    "email": "khanh@duck.com"
   },
   "metadata": {
     "description": "MCP server and Claude Code plugin for exploring, analyzing, and decompiling Java JAR files"
@@ -12,9 +12,9 @@
       "name": "dejared",
       "source": "./",
       "description": "Explore, analyze, and decompile Java JAR files with structured workflows.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
-        "name": "HuynhKhanh1402"
+        "name": "hqkh4nh"
       },
       "license": "MIT",
       "keywords": ["java", "jar", "decompiler", "bytecode", "reverse-engineering", "mcp"],

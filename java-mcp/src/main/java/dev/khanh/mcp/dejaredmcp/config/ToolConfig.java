@@ -40,7 +40,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_list_packages",
              title = "List Packages",
-             description = "List all packages in a JAR file with their class counts.",
+             description = "List all packages in a JAR file with their class counts. Use this instead of `jar tf` when you need a structured package overview.",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
@@ -56,7 +56,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_list_classes",
              title = "List Classes",
-             description = "List classes in a package. Use recursive=true to include sub-packages in a single call.",
+             description = "List classes in a package. Use recursive=true to include sub-packages in a single call. Prefer this over `jar tf | grep` for exploring library layout.",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
@@ -74,7 +74,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_read_resource",
              title = "Read Resource",
-             description = "Read a text resource file from inside a JAR. Binary content is automatically rejected.",
+             description = "Read a text resource file from inside a JAR (application.yml, spring.factories, MANIFEST.MF, etc.). Binary content is auto-rejected. Use instead of `unzip -p` or extracting the JAR manually.",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
@@ -91,7 +91,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_list_resources",
              title = "List Resources",
-             description = "List all non-class resource files inside a JAR with their sizes (config, properties, XML, etc.).",
+             description = "List all non-class resource files inside a JAR with their sizes (config, properties, XML, etc.). Replaces `jar tf | grep -v .class`.",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
@@ -109,7 +109,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_search_class",
              title = "Search Class",
-             description = "Search for classes by name keyword (case-insensitive) across all packages in a JAR.",
+             description = "Search for classes by name keyword (case-insensitive) across all packages in a JAR. Replaces `jar tf <jar> | grep -i <name>`.",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
@@ -126,7 +126,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_search_string",
              title = "Search String",
-             description = "Search for string literals in bytecode constant pools across all classes in a JAR (URLs, SQL, error messages, config values, etc.).",
+             description = "Search string literals in bytecode constant pools across all classes in a JAR (URLs, SQL, error messages, config values, obfuscated markers). Replaces `strings <jar> | grep` and works where `grep` can't reach compiled .class entries.",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
@@ -145,7 +145,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_dump_package_metadata",
              title = "Dump Package Metadata",
-             description = "Dump structural metadata (annotations, fields, methods) for all classes in one or more packages via ASM bytecode analysis. Accepts multiple packages in one call.",
+             description = "Dump structural metadata (annotations, fields, methods) for all classes in one or more packages via ASM bytecode analysis. Accepts multiple packages in one call — prefer this over repeated `javap -p` invocations.",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
@@ -162,7 +162,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_get_metadata",
              title = "Get Class Metadata",
-             description = "Extract class metadata via ASM bytecode analysis — superclass, interfaces, annotations, fields, and method signatures. Much faster than decompilation.",
+             description = "Extract class metadata via ASM bytecode analysis — superclass, interfaces, annotations, fields, and method signatures. Much faster than decompilation. Use instead of `javap -p <class>`.",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
@@ -179,7 +179,7 @@ public class ToolConfig {
 
     @McpTool(name = "dejared_decompile_class",
              title = "Decompile Class",
-             description = "EXPENSIVE: Decompile a class to full Java source code. Output can be very large for complex classes. Check metadata first to decide if decompilation is necessary. Default engine: cfr. Alternatives: vineflower (modern Java features), procyon (obfuscated bytecode).",
+             description = "EXPENSIVE: Decompile a class to full Java source code. Output can be very large for complex classes. Check metadata first to decide if decompilation is necessary. Equivalent to running CFR/Vineflower/Procyon manually, but integrated. Default engine: cfr. Alternatives: vineflower (modern Java features), procyon (obfuscated bytecode).",
              annotations = @McpTool.McpAnnotations(
                  readOnlyHint = true,
                  destructiveHint = false,
